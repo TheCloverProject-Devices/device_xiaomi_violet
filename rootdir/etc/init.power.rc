@@ -25,6 +25,12 @@ on property:vendor.setup.power=1
 
     # Enable suspend clock reporting
     write /sys/kernel/debug/clk/debug_suspend 1
+    
+    function configure_vbswap_parameters() {
+    echo 4294967296 > /sys/devices/virtual/block/vbswap0/disksize
+    mkswap /dev/block/vbswap0
+    swapon /dev/block/vbswap0
+}
 
     # Enable bus-dcvs
     write /sys/devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor bw_hwmon
@@ -116,6 +122,11 @@ on property:vendor.setup.power=1
 
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
+    
+    echo 0 > /proc/sys/vm/page-cluster
+
+    # Setup vbswap
+    configure_vbswap_parameters
 
 on boot
     # Disable console_suspend to get better logging for kernel crashes
