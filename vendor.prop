@@ -191,6 +191,7 @@ ro.vendor.use_data_netmgrd=true
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
+vendor.perf.framepacing.enable=1
 
 # Power
 persist.vendor.cp.support_qc3p5=0
