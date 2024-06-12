@@ -48,6 +48,9 @@ persist.vendor.data.profile_update=true
 # Disable Skia tracing by default
 debug.hwui.skia_atrace_enabled=false
 
+# Display
+debug.performance.tuning=1
+
 # Disable vsync for cpu rendered apps
 debug.cpurend.vsync=false
 
