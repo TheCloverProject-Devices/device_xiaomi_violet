@@ -47,6 +47,7 @@ persist.vendor.data.profile_update=true
 
 # Disable Skia tracing by default
 debug.hwui.skia_atrace_enabled=false
+debug.hwui.skia_use_perfetto_track_events=false
 
 # Display
 debug.performance.tuning=1
